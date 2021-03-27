@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+{%block content%}
+<br>
+<p>Organization name : {{nameM}}</p>
+<p>Number of employees : {{totalcountM}}</p>
+    <table class="table table-striped table-bordered table-sm table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>SR.NO.</th>
+                <th>NAME</th>
+                <th>GENDER</th>
+                <th>BIRTHDATE</th>
+                <th>JOB TITLE</th>
+                <th>EMAIL</th>
+                <!--<th>ORGANIZATION</th>-->
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{employee.name}}</td>
+                <td>{{employee.gender}}</td>
+                <td>{{employee.dob}}</td>
+                <td>{{employee.jobtitle}}</td>
+                <td>{{employee.email}}</td>
+                <!--<td>{{employee.organization}}</td>-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
