@@ -37,7 +37,7 @@ class Employee(models.Model):
             
 
     def isExists(self):
-        if Employee.objects.filter(email=self.email).filter(name=self.name).filter(dob=self.dob).filter(jobtitle=self.jobtitle).filter(organization=self.organization).filter(gender=self.gender):
+        if Employee.objects.filter(email=self.email).filter(name__iexact=self.name).filter(dob=self.dob).filter(jobtitle__iexact=self.jobtitle).filter(organization=self.organization).filter(gender=self.gender):
             return True
 
         return False     

@@ -43,7 +43,7 @@ class Register(View):
             print(name, gender, jobtitle, organization, dob, email, password)
             employee.password=make_password(employee.password)
             employee.register()
-            return redirect('login')
+            return redirect('/')
 
         else:
             data={
