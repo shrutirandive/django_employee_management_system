@@ -3,8 +3,11 @@ from django.db.models import Count
 from django.views import View
 
 from employeetrackingsystem.models.employee import Employee
+from employeetrackingsystem.middlewares.auth import auth_middleware
+from django.utils.decorators import method_decorator
 
 #View
+
 def showg(request):
     employee=Employee.objects.filter(organization='google')
     totalcountG=Employee.objects.filter(organization='google').count()
