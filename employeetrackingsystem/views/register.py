@@ -66,7 +66,9 @@ class Register(View):
             error_message="email required"
         elif(not employee.dob):
             error_message="dob required"
-        elif(employee.dob>"2002-01-01" and employee.dob<"1960-01-01"):
+        elif(employee.dob>"2002-01-01"):
+            error_message="invalid age"
+        elif(employee.dob<"1960-01-01"):
             error_message="invalid age"
         elif(not employee.password):
             error_message="password required"
